@@ -1,0 +1,29 @@
+<!-- デスクトップ -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+   <html lang="ja">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <title>標的型攻撃メール　体験</title>
+      <link href="desktop.css" rel="stylesheet" type="text/css" media="all" />
+      <!-- 3000ミリ秒後に画像変更 -->
+      <script type="text/javascript">
+        function change(){
+        location.href = "desktop-after.html"
+        }
+    </script>
+   </head>
+   <body onload="setTimeout('change()',2000)">
+       <!-- 背景 -->
+       <div class="back">
+
+       <div class="wrap">
+
+        <!-- 画像ファイル -->
+        <div class="file">
+            <img class="img" src="img/before.png">  
+        </div><!-- file -->      
+       </div><!-- wrap -->
+        </div><!-- back -->
+    </body>
+         
+</html>

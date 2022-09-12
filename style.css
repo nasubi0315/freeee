@@ -1,0 +1,163 @@
+<!--　a1.htmlのcss　-->
+#container {   
+    width: 100%;
+    float: left;
+    margin-right: -50px
+  }
+.main {
+    margin-right: -100px;
+    width: 100%;
+    float: right;
+}
+
+.main .main_inner {
+    margin-left: 100px;
+}
+
+.side {
+    width: 100px;
+    height: 100%;
+    float: left; 
+}
+
+
+
+
+  
+  /* ポップアップウインドウの設定 */
+  .popup {
+    float: right;
+    background-color: #c70909;
+    color: white;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 1000px;
+    height: 450px;
+    overflow-y: scroll;
+    
+  }
+  /* チェックボックスの初期設定 */
+  #popup-on{
+    display: none;
+  }
+  /* チェックされたらポップアップウインドウを開く */
+  #popup-on:checked + .popup{
+    display: block;
+  }
+
+    /* 閉じるボタン */
+    .batsu {
+      display: inline-block;
+      position: relative;
+      width: 30px;
+      height: 30px;
+      background: #333; /* 枠の調整 */
+      text-align: right;
+      margin-right: auto;
+    }
+     
+    .batsu::before, .batsu::after { /* 共通設定 */
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 5px; /* 棒の幅（太さ） */
+      height: 30px; /* 棒の高さ */
+      background: #fff;
+    }
+     
+    .batsu::before {
+      transform: translate(-50%,-50%) rotate(45deg);
+    }
+     
+    .batsu::after {
+      transform: translate(-50%,-50%) rotate(-45deg);
+    }
+  
+    a.batu{
+      text-decoration: none;
+      align: right;
+    }
+
+    .popup-content2{
+      display: flex;
+      flex-flow: column;
+    }
+  
+  
+  /* お金を払うボタン*/
+  .payment{
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  a.payment.payment{
+    background: rgb(44, 44, 44);
+    padding: 10px;
+    cursor: pointer;
+    margin: auto;
+    border-bottom: 5px solid #000000;
+  }
+
+  a.payment{
+    border-radius: 20vh;
+    text-decoration: none;
+  }
+
+  a.payment.payment:hover{
+    margin-top: 3px;
+    border-bottom: 2px solid #070707;
+  }
+
+  .fa-position-right {
+    position: absolute;
+    top: calc(50% - .5em);
+    right: 1rem;
+  }
+
+  /* ポップアップの内容 */
+  .popup-content{
+    margin: auto ;
+    width: 800px;
+    height: 300px;
+    padding: 10px,10px;
+    margin: 5px,5px;
+    display: flex;
+    vertical-align: middle;
+
+  }
+
+  /* カウントダウンタイマー */
+  .countdown{ 
+    display: inline-block;   
+      color: white;
+      border: solid 2px #fff;/*線色*/
+      padding: 2px;/*文字周りの余白*/
+      margin: 5px;
+      border-radius: 0.2em;/*角丸*/
+      width: 250px; 
+      height: 130px;
+      text-align: center; 
+  }
+
+
+  
+  .jouhou{
+    text-align: left;
+    width: 500px;
+    height: 330px;
+  }
+
+  .tate{
+    display: flex;
+    flex-flow: column;
+  }
+  
+  .think{
+    text-align: left;
+  }
+

@@ -1,0 +1,151 @@
+<!--　メール本文　-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>標的型攻撃メール　体験</title>
+    <!-- CSS -->
+    <link href="style.css" rel="stylesheet" type="text/css" media="all" />
+    <!--[if lt IE 7]>
+    <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE7.js"></script>
+    ![endif]-->
+  </head>
+
+  <body >
+    <style type="text/css">
+      a.blocklink {
+      display: block;
+      width: 100%;
+      padding: 0px;
+      text-decoration: none;
+      color: black;
+      }
+      a span {
+        text-decoration: underline;
+        color: blue;
+      }
+    </style>
+    <img src="img/c-list.png">
+    <div class="main">
+      <div class="main_inner">
+          <div id="container">
+              <h1>件名:お見積り書の送付　</h1>
+              <p><font size="2">株式会社RSW　笹森秀樹</font><font size="-1" color="#696969">＜Hideki-Sasamori@gmail.com＞</font>
+              <br><font size="-1" color="#696969">To 自分 ▼</font></p>
+              <p>はじめ株式会社<br>
+                  営業部　担当者様<br><br>
+                  お世話になります。<br>
+                  株式会社RSW　営業部の笹森秀樹と申します。<br><br>                  
+                  ご依頼いただきました内容でのお見積書を作成いたしました。
+                  確認をお願いいたします。<br>
+                  ---------------------------------<br>
+                  株式会社RSW<br>
+                  営業部　笹森秀樹<br>
+                  愛知県名古屋市中区栄1-2-3<br>
+                  TEL：052-242-3602<br>
+                  FAX：052-242-3603<br>
+                  Email：SasamoriHideki@gmail.com<br>
+                  ---------------------------------
+              </p>
+
+              <!-- ポップアップ -->
+              <div class="pop-box">
+                  <!-- ポップアップ開く -->
+                  <label for="popup-on">                                           
+                    <div class="btn-open">
+                      <img src="img/exel.png" alt="" >
+                    </div>
+                  </label><!-- popupon -->
+                  <input type="checkbox" id="popup-on">
+                    <div class="popup">
+                       <!-- 閉じるボタン -->   
+                       <a href="desktop.html" class="batu"　align="right" ><div  class="batsu" ></div></a> 
+                      <div class="popup-content2">
+                        
+                      <div class="popup-content">
+                        
+                        <!-- ポップアップの中身 -->
+                        <!-- 日付カウントダウン 
+                          参照：もぐブログ
+                          Javascriptでカウントダウンタイマーを実装【コピペでOK】
+                          https://mgmgblog.com/?p=2595　-->
+                        <script>
+                            let countdown = setInterval(function(){
+                              const now = new Date()  //今の日時
+                              const target = new Date(now.getFullYear(), now.getMonth() ,now.getDate()+7 ,'23','59','59') //ターゲット日時を取得
+                              const remainTime = target - now  //差分を取る（ミリ秒で返ってくる
+                                    
+                              //指定の日時を過ぎていたら処理をしない
+                              if(remainTime < 0) return false 
+                              //差分の日・時・分・秒を取得
+                              const difDay  = Math.floor(remainTime / 1000 / 60 / 60 / 24)
+                              const difHour = Math.floor(remainTime / 1000 / 60 / 60 ) % 24
+                              const difMin  = Math.floor(remainTime / 1000 / 60) % 60
+                              const difSec  = Math.floor(remainTime / 1000) % 60
+                              
+                              //残りの日時を上書き
+                              document.getElementById("year").textContent  = now.getFullYear();
+                              document.getElementById("month").textContent = now.getMonth() +1;
+                              document.getElementById("day").textContent  = now.getDate() + 7;
+                              document.getElementById("hour").textContent = now.getHours();
+                              document.getElementById("min").textContent  = now.getMinutes();
+
+                              document.getElementById("countdown-day").textContent  = difDay;
+                              document.getElementById("countdown-hour").textContent = difHour;
+                              document.getElementById("countdown-min").textContent  = difMin;
+                              document.getElementById("countdown-sec").textContent  = difSec;
+                              
+                              //指定の日時になればカウントを止める
+                              if(remainTime < 0) clearInterval(countdown)
+                            }, 1000)    //1秒間に1度処理
+                        </script>
+                         
+                         <div class="tate">
+                          <!-- 鍵の画像 -->
+                          <img src="img/rock.png" width="200px" height="200px">
+                          <span id="countdownArea" class="countdown">
+                            <!-- １週間後の日付 -->
+                            <p><font color="#f0e68c">あなたのファイルが失われるまで</font><br>
+                            <span id="year"></span>/
+                            <span id="month"></span>/
+                            <span id="day"></span>
+                            <span id="hour"></span>:
+                            <span id="min"></span><br>
+                            <!-- カウントダウン -->
+                            残り時間<br>
+                            <span id="countdown-day"></span>th
+                            <span id="countdown-hour"></span>:
+                            <span id="countdown-min"></span>:
+                            <span id="countdown-sec"></span>
+                            </p>
+                          </span>
+                        </div><!-- tate -->                         
+                          <!-- 表示内容 -->
+                          <span class="jouhou">  
+                            <h1>!!!重要な情報!!!<br></h1>
+                            <p>あなたのパソコンのすべてのファイルは、非常に強力な鍵で暗号化されました。(AES-256bit)<br> 
+                            文書、写真、ビデオ、データベース、およびその他のファイルの多くが暗号化されたため、アクセスできなくなりました。
+                            ファイルを基に戻す唯一の方法はただ、１つです。私たちは、これらのファイルを解読させることができます。<br>
+                            ファイルを回復させるには、お金を払う必要があります。7日間経過するとファイルを永久に回復することはできません。<br></p>
+                            <br>                      
+                          </span>
+                        </div> <!-- popupcontent -->
+                        <label for="popup-on">
+                          <div class="payment">
+                            <a href="desktop.html" class="payment"><font color="#fff" size="6px">check payment</font><i class="fa-position-right"></i></a>
+                          </div>
+                        </label>
+                        <p><font color="black" size="6px">※「×」を押してファイルを確認してみましょう。</font></p>
+                    </div>
+                      </div><!-- popup -->
+                 </div><!-- popbox -->
+             </div><!-- container -->
+            <font size="6" color="red">↑クリックしてお見積書を開いてください。</font>
+          </div><!-- main-innner -->
+       </div><!-- main -->
+    <div class="side">
+      <img src="img/b.png" >
+    </div>
+  </body>  
+</html>
